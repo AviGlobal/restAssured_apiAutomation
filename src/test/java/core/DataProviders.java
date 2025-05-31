@@ -10,7 +10,7 @@ public class DataProviders {
                 {"eve.holt@reqres.in", "pistol"},
                 {"sydney@fife", ""},
                 {"", "pistol"},
-                {"invalid@email.com", "123456"}
+                {"inv@email.com", "123456"}
         };
     }
 

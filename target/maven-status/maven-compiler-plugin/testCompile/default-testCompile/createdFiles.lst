@@ -1,0 +1,6 @@
+ReqResAutomation/getAPIAutomate.class
+core/DataProviders.class
+ReqResAutomation/patchAPIAutomation.class
+ReqResAutomation/deleteAPIAutomate.class
+ReqResAutomation/postAPIAutomate.class
+ReqResAutomation/updateAPIAutomate.class

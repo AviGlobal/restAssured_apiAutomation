@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ReqRes API Automation Suite" parallel="false">
+
+    <test name="Full API Suite">
+        <classes>
+            <class name="ReqResAutomation.getAPIAutomate"/>
+            <class name="ReqResAutomation.postAPIAutomate"/>
+            <class name="ReqResAutomation.patchAPIAutomation"/>
+            <class name="ReqResAutomation.updateAPIAutomate"/>
+            <class name="ReqResAutomation.deleteAPIAutomate"/>
+        </classes>
+    </test>
+
+</suite>

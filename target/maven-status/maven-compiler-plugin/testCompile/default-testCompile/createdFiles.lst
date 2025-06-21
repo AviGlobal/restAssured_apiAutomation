@@ -1,6 +1,8 @@
 ReqResAutomation/getAPIAutomate.class
+ReqResAutomation/postAPIAutomate.class
+core/AgenticDataProviders.class
 core/DataProviders.class
+ReqResAutomation/postAPIAgeniticAITest.class
 ReqResAutomation/patchAPIAutomation.class
 ReqResAutomation/deleteAPIAutomate.class
-ReqResAutomation/postAPIAutomate.class
 ReqResAutomation/updateAPIAutomate.class

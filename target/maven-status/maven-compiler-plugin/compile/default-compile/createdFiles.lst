@@ -1,4 +1,5 @@
 core/APIUtils.class
+core/OllamaClient.class
 core/EndPointsUtils.class
 core/EndPointsUtils$reqResEndPoints.class
 core/DateUtil.class

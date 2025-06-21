@@ -19,5 +19,9 @@ public class EndPointsUtils {
 
         }
 
+        public static class fakeStoreAPI {
+                public static final String LOGIN_POST = "/users";
+                public static final String LOGIN_CHECK = "/auth/login";
 
+        }
 }

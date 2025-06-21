@@ -1,6 +1,8 @@
 /Users/aviralsingh/Downloads/restAssured_apiAutomation/src/test/java/ReqResAutomation/postAPIAutomate.java
 /Users/aviralsingh/Downloads/restAssured_apiAutomation/src/test/java/ReqResAutomation/getAPIAutomate.java
 /Users/aviralsingh/Downloads/restAssured_apiAutomation/src/test/java/ReqResAutomation/updateAPIAutomate.java
+/Users/aviralsingh/Downloads/restAssured_apiAutomation/src/test/java/ReqResAutomation/postAPIAgeniticAITest.java
 /Users/aviralsingh/Downloads/restAssured_apiAutomation/src/test/java/core/DataProviders.java
 /Users/aviralsingh/Downloads/restAssured_apiAutomation/src/test/java/ReqResAutomation/patchAPIAutomation.java
+/Users/aviralsingh/Downloads/restAssured_apiAutomation/src/test/java/core/AgenticDataProviders.java
 /Users/aviralsingh/Downloads/restAssured_apiAutomation/src/test/java/ReqResAutomation/deleteAPIAutomate.java

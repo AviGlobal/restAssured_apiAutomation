@@ -21,6 +21,7 @@ jobs:
         with:
           ref: ${{ github.event.inputs.branch }}
 
+
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
@@ -28,11 +29,23 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Verify Branch
-        run: |
-          echo "Running on branch:"
-          git branch --show-current
 
       - name: Execute Automation
         run: |
           mvn clean test
+
+
+      # Generate Allure HTML Report
+      - name: Generate Allure Report
+        if: always()
+        run: |
+          mvn allure:report
+
+
+      # Upload HTML Report
+      - name: Upload Automation Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Automation-HTML-Report
+          path: target/site/allure-maven-plugin/

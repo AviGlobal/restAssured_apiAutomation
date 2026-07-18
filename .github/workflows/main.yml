@@ -1,22 +1,22 @@
-name: Manual Automation Execution
+name: API Automation Execution
 
 on:
   workflow_dispatch:
     inputs:
       branch:
-        description: 'Select branch to run automation'
+        description: 'Select branch'
         required: true
         default: 'main'
 
 jobs:
 
-  automation-run:
+  api-tests:
 
     runs-on: ubuntu-latest
 
     steps:
 
-      - name: Checkout Selected Branch
+      - name: Checkout Code
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.inputs.branch }}
@@ -30,22 +30,14 @@ jobs:
           cache: maven
 
 
-      - name: Execute Automation
+      - name: Run ReqRes API Automation
         run: |
-          mvn clean test
+          mvn clean test -Dtest=ReqResAutomation.*
 
 
-      # Generate Allure HTML Report
-      - name: Generate Allure Report
-        if: always()
-        run: |
-          mvn allure:report
-
-
-      # Upload HTML Report
-      - name: Upload Automation Report
+      - name: Upload Reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Automation-HTML-Report
-          path: target/site/allure-maven-plugin/
+          name: API-Automation-Report
+          path: target/

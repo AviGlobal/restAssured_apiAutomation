@@ -1,43 +1,51 @@
-name: API Automation Execution
+name: ReqRes API Automation
 
 on:
   workflow_dispatch:
     inputs:
       branch:
-        description: 'Select branch'
+        description: "Select branch"
         required: true
-        default: 'main'
+        default: "main"
+
 
 jobs:
 
-  api-tests:
+  api-test:
 
     runs-on: ubuntu-latest
 
+
     steps:
 
-      - name: Checkout Code
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.inputs.branch }}
+    - name: Checkout Code
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.inputs.branch }}
 
 
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: maven
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+        cache: maven
 
 
-      - name: Run ReqRes API Automation
-        run: |
-          mvn clean test -Dtest=ReqResAutomation.*
+    - name: Run API Automation
+      run: |
+        mvn clean test
 
 
-      - name: Upload Reports
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: API-Automation-Report
-          path: target/
+    - name: Generate Allure Report
+      if: always()
+      run: |
+        mvn allure:report
+
+
+    - name: Upload Allure Report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: Allure-API-Report
+        path: target/site/allure-maven-plugin

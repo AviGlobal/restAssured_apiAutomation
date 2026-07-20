@@ -6,6 +6,12 @@ on:
       branch:
         description: "Select branch"
         required: true
+        type: choice
+        options:
+          - main
+          - master
+          - develop
+          - release
 
 
 jobs:

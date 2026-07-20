@@ -6,7 +6,6 @@ on:
       branch:
         description: "Select branch"
         required: true
-        default: "main"
 
 
 jobs:
